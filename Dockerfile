@@ -6,7 +6,7 @@ ENV SDK_HOME /opt
 WORKDIR $SDK_HOME
 
 RUN apt-get --quiet update --yes
-RUN apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1 git build-essential --no-install-recommends
+RUN apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1 git file build-essential --no-install-recommends
 
 # Gradle
 ENV GRADLE_VERSION 2.14.1
