@@ -15,13 +15,13 @@
 ## Build image
 
 ```bash
-docker build -t alexisduque/android-ndk-gradle .
+docker build -t alexisduque/android-ndk-gradle-docker .
 ```
 
 ## Push build version to repository
 
 ```bash
-docker push alexisduque/android-ndk-gradle
+docker push alexisduque/android-ndk-gradle-docker
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ docker push alexisduque/android-ndk-gradle
 This is what my .gitlab-ci.yml looks like:
 
 ```yaml
-image: alexisduque/android-ndk-gradle
+image: alexisduque/android-ndk-gradle-docker
 stages:
   - build
 
@@ -47,11 +47,11 @@ build:
 ### Without GitLab
 
 ```bash
-docker pull alexisduque/android-ndk-gradle
+docker pull alexisduque/android-ndk-gradle-docker
 ```
 
 Change directory to your project directory, then run:
 
 ```bash
-docker run --tty --interactive --volume=$(pwd):/opt/workspace --workdir=/opt/workspace --rm alexisduque/android-gradle  /bin/sh -c "gradle build"
+docker run --tty --interactive --volume=$(pwd):/opt/workspace --user `id -u` --workdir=/opt/workspace --rm alexisduque/android-ndk-gradle-docker /bin/sh -c "gradle build"
 ```
