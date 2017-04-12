@@ -4,7 +4,7 @@
 ## Included
 * OpenJDK 8
 * Git
-* Gradle 2.14.1
+* Gradle 3.3
 * Android NDK r13b
 * Android SDK (android-24,android-25)
 * Android Build-tools (24.0.0,24.0.1,24.0.2,24.0.3,25.0.2)
